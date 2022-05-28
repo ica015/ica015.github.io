@@ -1,0 +1,222 @@
+$rosa: #ff548f
+$roxo: #9061c2
+$roxo-claro: #be80ff
+$azul-claro: #63d3ff
+$azul: #0045da
+$cinza-claro: #fefefe
+$cinza-escuro: #333
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    //font-family: 'Roboto Mono', monospace
+
+body
+    background: $cinza-claro
+    display: flex
+    flex-direction: column
+
+.menu
+    display: flex
+    justify-content: flex-start
+    width: 100%
+    padding-top: .5em
+
+    ul
+        display: flex
+        
+
+    li
+        list-style: none
+        
+        a
+            text-decoration: none
+            padding: 0 1em
+            font-family: 'Times new Roman'
+            position: relative
+            font-weight: 600
+            transition: .5s
+    
+        :hover
+            cursor: pointer
+            color: $azul
+section
+    width: 100%
+    min-height: 100vh
+    padding: .5em 0 .5em 2em
+.principal
+    position: relative
+    display: grid
+    grid-template-columns: 1fr 1fr
+    flex-direction: row
+    justify-content: space-between
+    
+
+    //.descricao
+        
+    h1
+        text-align: center
+        padding-top: 3em
+        margin-bottom: 1em
+        font-family: 'Merriweather Sans', sans-serif
+        font-size: 3em
+        text-shadow: 0 0 1px $azul-claro
+
+    .imagem
+        background-color: $azul
+        display: flex
+        justify-content: center
+        align-content: center
+        align-items: center
+        padding:0 2em
+        border-radius: 100% 0% 69% 31% / 61% 100% 0% 39%
+        //clip-path: polygon(30% 0%,100% 0%,100% 100%,0% 100%,20% 70%,15% 30%)
+        
+        span
+            position: absolute
+            top: 22%
+            left: 59%
+            width: 34%
+            height: 59%
+            border: 2px solid #fff
+            border-radius: 29% 71% 61% 39% / 34% 30% 70% 66% 
+            animation: rodar 4s linear infinite reverse
+            &:nth-child(1)
+                position: absolute
+                top: 22%
+                left: 58%
+                width: 34%
+                height: 59%
+                border: 2px solid #fff
+                border-radius: 29% 71% 61% 39% / 34% 30% 70% 66% 
+                animation: rodar 4s linear infinite
+            
+        img
+            display: flex
+            width: 50%
+            align-content: center
+            justify-content: center
+            //clip-path: inset(0% 0 40% 0)
+            border-radius: 50%
+        
+@keyframes rodar
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+.cursos
+    display: flex
+    justify-content: space-around
+    flex-wrap: wrap
+    flex-direction: row
+    padding: 2em 0 0 2em
+    align-content: flex-start
+    transition: .5s
+
+    .card
+        position: relative
+
+        .face
+            width: 20em
+            min-height: 30vh
+
+        .face1
+            position: relative
+            background: $cinza-claro
+            border: 1px solid $cinza-escuro
+            display: flex
+            justify-content: center
+            align-items: center
+            z-index: 1
+            transform: translateY(15vh)
+            transition: 1s
+
+            .conteudo
+                opacity: .6
+                transition: .5s
+                display: flex
+                flex-direction: column
+                align-items: center
+        
+                h3
+                    width: 100%
+                    color: $cinza-escuro
+                    font-size: 1.5em
+                    font-weight: 600
+                    text-align: center
+                    padding-top: 1em
+                    transition: 1s
+
+        .texto_card
+            position: relative
+            background: $cinza-claro
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-direction: column
+            padding: 1.5em
+            box-sizing: border-box
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .8)
+            transform: translateY(-15vh)
+            transition: 1s
+            
+
+            .conteudo
+                p
+                    width: 100%
+                //max-height: 20vh
+                //overflow: hidden
+                display: none
+
+            a
+                margin: 1em 0
+                display: inline-block
+                text-decoration: none
+                font-weight: 900
+                color: $cinza-escuro
+                font-family: "times new roman"
+                padding: .8em
+                border: 1px solid $cinza-escuro
+                &:hover
+                    color:$cinza-claro
+                    background: $cinza-escuro  
+                    box-shadow: 0 0 5px $rosa, 0 0 10px $rosa, 0 0 15px $rosa  
+        img
+            max-width: 30%
+
+        &:hover
+            .face1
+                background: $rosa
+                transform: translateY(0)
+
+                .conteudo
+                    opacity: 1
+
+                    h3
+                        letter-spacing: 3px
+        &:hover
+            .texto_card
+                transform: translateY(0)
+                
+                .conteudo
+                    width: 100%
+                    display: block
+                    //overflow: visible
+
+                    p
+                        width: 100%
+
+.cartao
+    //position: relative
+    width: 20em
+    background: $cinza-claro
+    border: 1px solid $cinza-escuro
+    display: flex
+    justify-content: center
+    align-items: center
+    z-index: 1
+    //transform: translateY(15vh)
+    transition: 1s            
+

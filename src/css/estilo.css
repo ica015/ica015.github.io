@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fefefe;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  padding-top: 0.5em;
+}
+.menu ul {
+  display: flex;
+}
+.menu li {
+  list-style: none;
+}
+.menu li a {
+  text-decoration: none;
+  padding: 0 1em;
+  font-family: "Times new Roman";
+  position: relative;
+  font-weight: 600;
+  transition: 0.5s;
+}
+.menu li :hover {
+  cursor: pointer;
+  color: #0045da;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 0.5em 0 0.5em 2em;
+}
+
+.principal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.principal h1 {
+  text-align: center;
+  padding-top: 3em;
+  margin-bottom: 1em;
+  font-family: "Merriweather Sans", sans-serif;
+  font-size: 3em;
+  text-shadow: 0 0 1px #63d3ff;
+}
+.principal .imagem {
+  background-color: #0045da;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 0 2em;
+  border-radius: 100% 0% 69% 31%/61% 100% 0% 39%;
+}
+.principal .imagem span {
+  position: absolute;
+  top: 22%;
+  left: 59%;
+  width: 34%;
+  height: 59%;
+  border: 2px solid #fff;
+  border-radius: 29% 71% 61% 39%/34% 30% 70% 66%;
+  animation: rodar 4s linear infinite reverse;
+}
+.principal .imagem span:nth-child(1) {
+  position: absolute;
+  top: 22%;
+  left: 58%;
+  width: 34%;
+  height: 59%;
+  border: 2px solid #fff;
+  border-radius: 29% 71% 61% 39%/34% 30% 70% 66%;
+  animation: rodar 4s linear infinite;
+}
+.principal .imagem img {
+  display: flex;
+  width: 50%;
+  align-content: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+@keyframes rodar {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.cursos {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 2em 0 0 2em;
+  align-content: flex-start;
+  transition: 0.5s;
+}
+.cursos .card {
+  position: relative;
+}
+.cursos .card .face {
+  width: 20em;
+  min-height: 30vh;
+}
+.cursos .card .face1 {
+  position: relative;
+  background: #fefefe;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(15vh);
+  transition: 1s;
+}
+.cursos .card .face1 .conteudo {
+  opacity: 0.6;
+  transition: 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cursos .card .face1 .conteudo h3 {
+  width: 100%;
+  color: #333;
+  font-size: 1.5em;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 1em;
+  transition: 1s;
+}
+.cursos .card .texto_card {
+  position: relative;
+  background: #fefefe;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5em;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-15vh);
+  transition: 1s;
+}
+.cursos .card .texto_card .conteudo {
+  display: none;
+}
+.cursos .card .texto_card .conteudo p {
+  width: 100%;
+}
+.cursos .card .texto_card a {
+  margin: 1em 0;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 900;
+  color: #333;
+  font-family: "times new roman";
+  padding: 0.8em;
+  border: 1px solid #333;
+}
+.cursos .card .texto_card a:hover {
+  color: #fefefe;
+  background: #333;
+  box-shadow: 0 0 5px #ff548f, 0 0 10px #ff548f, 0 0 15px #ff548f;
+}
+.cursos .card img {
+  max-width: 30%;
+}
+.cursos .card:hover .face1 {
+  background: #ff548f;
+  transform: translateY(0);
+}
+.cursos .card:hover .face1 .conteudo {
+  opacity: 1;
+}
+.cursos .card:hover .face1 .conteudo h3 {
+  letter-spacing: 3px;
+}
+.cursos .card:hover .texto_card {
+  transform: translateY(0);
+}
+.cursos .card:hover .texto_card .conteudo {
+  width: 100%;
+  display: block;
+}
+.cursos .card:hover .texto_card .conteudo p {
+  width: 100%;
+}
+
+.cartao {
+  width: 20em;
+  background: #fefefe;
+  border: 1px solid #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transition: 1s;
+}
+
+/*# sourceMappingURL=estilo.css.map */
