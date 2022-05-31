@@ -13,10 +13,10 @@
 <body>
     <nav class="menu">
         <ul>
-            <li><a>Formação</a></li>
-            <li><a>Cursos</a></li>
-            <li><a>Projetos</a></li>
-            <li><a>Contato</a></li>
+            <li><a data-text="Formação">Formação</a></li>
+            <li><a data-text="Cursos">Cursos</a></li>
+            <li><a data-text="Projetos">Projetos</a></li>
+            <li><a data-text="Contato">Contato</a></li>
         </ul>
     </nav>
     <section class="principal">
@@ -26,9 +26,10 @@
         </div>
         
         <div class="imagem">
-            <span></span>
-            <span></span>
-            <img src="./src/img/Carlos_Henrique1.jpg" alt="Carlos Henrique">
+            <div class="borda-img">
+                <img src="./src/img/Carlos_Henrique1.jpg" alt="Carlos Henrique">
+            </div>
+        
         </div>
         
     </section>
@@ -75,7 +76,8 @@
         <div class="card">
             <div class="face face1">
                 <div class="conteudo">
-                    <img src="./src/img/web.png" alt="">
+                    <!--<img src="./src/img/web.png" alt=""> -->
+                    <ion-icon name="code-working-outline"></ion-icon>
                     <h3>Desenvolvimento de Software</h3>
                 </div>
             </div>

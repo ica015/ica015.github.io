@@ -24,15 +24,26 @@ body {
 }
 .menu li a {
   text-decoration: none;
-  padding: 0 1em;
+  padding: 0 0.5em;
   font-family: "Times new Roman";
   position: relative;
+  font-size: 1.5em;
   font-weight: 600;
-  transition: 0.5s;
+  color: #000;
 }
-.menu li :hover {
-  cursor: pointer;
+.menu li a::before {
+  content: attr(data-text);
+  position: absolute;
   color: #0045da;
+  width: 0;
+  overflow: hidden;
+  transition: 1s;
+}
+.menu li a:hover {
+  cursor: pointer;
+}
+.menu li a:hover::before {
+  width: 100%;
 }
 
 section {
@@ -48,7 +59,7 @@ section {
   flex-direction: row;
   justify-content: space-between;
 }
-.principal h1 {
+.principal .descricao h1 {
   text-align: center;
   padding-top: 3em;
   margin-bottom: 1em;
@@ -59,38 +70,47 @@ section {
 .principal .imagem {
   background-color: #0045da;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-content: center;
   align-items: center;
   padding: 0 2em;
   border-radius: 100% 0% 69% 31%/61% 100% 0% 39%;
 }
-.principal .imagem span {
-  position: absolute;
-  top: 22%;
-  left: 59%;
-  width: 34%;
-  height: 59%;
-  border: 2px solid #fff;
-  border-radius: 29% 71% 61% 39%/34% 30% 70% 66%;
-  animation: rodar 4s linear infinite reverse;
-}
-.principal .imagem span:nth-child(1) {
-  position: absolute;
-  top: 22%;
-  left: 58%;
-  width: 34%;
-  height: 59%;
-  border: 2px solid #fff;
-  border-radius: 29% 71% 61% 39%/34% 30% 70% 66%;
-  animation: rodar 4s linear infinite;
-}
-.principal .imagem img {
+.principal .imagem .borda-img {
+  position: relative;
+  height: 18em;
+  width: 18em;
+  background: #0045da;
   display: flex;
-  width: 50%;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   border-radius: 50%;
+  overflow: hidden;
+}
+.principal .imagem .borda-img::before {
+  content: "";
+  position: absolute;
+  inset: -2em 6em;
+  background: linear-gradient(100deg, #ff548f, #be80ff);
+  animation: rodar 4s linear infinite;
+  transition: 0.5s;
+}
+.principal .imagem .borda-img:hover::before {
+  inset: -1em;
+}
+.principal .imagem .borda-img::after {
+  content: "";
+  position: absolute;
+  inset: 1em;
+  border-radius: 50%;
+  background: #0045da;
+  z-index: 1;
+}
+.principal .imagem .borda-img img {
+  position: relative;
+  width: 96%;
+  border-radius: 50%;
+  z-index: 3;
 }
 
 @keyframes rodar {
@@ -141,8 +161,11 @@ section {
   font-size: 1.5em;
   font-weight: 600;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 0.5em;
   transition: 1s;
+}
+.cursos .card .face1 .conteudo ion-icon {
+  font-size: 4em;
 }
 .cursos .card .texto_card {
   position: relative;
@@ -157,11 +180,9 @@ section {
   transform: translateY(-15vh);
   transition: 1s;
 }
-.cursos .card .texto_card .conteudo {
-  display: none;
-}
 .cursos .card .texto_card .conteudo p {
   width: 100%;
+  display: none;
 }
 .cursos .card .texto_card a {
   margin: 1em 0;
@@ -196,21 +217,10 @@ section {
 }
 .cursos .card:hover .texto_card .conteudo {
   width: 100%;
-  display: block;
 }
 .cursos .card:hover .texto_card .conteudo p {
   width: 100%;
-}
-
-.cartao {
-  width: 20em;
-  background: #fefefe;
-  border: 1px solid #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  transition: 1s;
+  display: block;
 }
 
 /*# sourceMappingURL=estilo.css.map */
