@@ -5,6 +5,7 @@ $azul-claro: #63d3ff
 $azul: #0045da
 $cinza-claro: #fefefe
 $cinza-escuro: #333
+$screen-medio: 900px
     
 *
     margin: 0
@@ -38,6 +39,9 @@ body
             font-size: 1.5em
             font-weight: 600
             color: #000
+
+            &.ativo
+                color:$azul
             
 
             &::before
@@ -60,12 +64,9 @@ section
     position: relative
     display: grid
     grid-template-columns: 1fr 1fr
-    flex-direction: row
     justify-content: space-between
     
-
     .descricao
-        
         h1
             text-align: center
             padding-top: 3em
@@ -74,52 +75,61 @@ section
             font-size: 3em
             text-shadow: 0 0 1px $azul-claro
 
-    .imagem
-        background-color: $azul
+    .ondas
         display: flex
-        justify-content: space-around
-        align-content: center
-        align-items: center
-        padding:0 2em
-        border-radius: 100% 0% 69% 31% / 61% 100% 0% 39%
-            
-        .borda-img
-            position: relative
-            height: 18em
-            width: 18em
-            background: $azul
+        flex-direction: column
+        align-content: stretch
+        justify-content: flex-start
+
+        .imagem
+            background-color: $azul
             display: flex
+            height: 100%
+            justify-content: space-around
+            align-content: center
             align-items: center
-            justify-content: center
-            border-radius: 50%
-            overflow: hidden
-            
-            &::before
-                content: ''
-                position: absolute
-                inset: -2em 6em
-                background: linear-gradient(100deg, $rosa, $roxo-claro)
-                animation: rodar 4s linear infinite
-                transition: .5s    
-
-            &:hover
-                &::before
-                    inset: -1em
-            
-            &::after
-                content: ''
-                position: absolute
-                inset: 1em
-                border-radius: 50%
-                background: $azul
-                z-index: 1
-
-            img
+            padding:0 2em
+            border-radius: 100% 0% 69% 31% / 61% 100% 0% 39%
+                
+            .borda-img
                 position: relative
-                width: 96%
+                height: 18em
+                width: 18em
+                background: $azul
+                display: flex
+                align-items: center
+                justify-content: center
                 border-radius: 50%
-                z-index: 3    
-            
+                overflow: hidden
+                
+                &::before
+                    content: ''
+                    position: absolute
+                    inset: -2em 6em
+                    background: linear-gradient(100deg, $rosa, $roxo-claro)
+                    animation: rodar 4s linear infinite
+                    transition: .5s    
+
+                &:hover
+                    &::before
+                        inset: -1em
+                
+                &::after
+                    content: ''
+                    position: absolute
+                    inset: .5em
+                    border-radius: 50%
+                    background: $azul
+                    z-index: 1
+
+                img
+                    position: absolute
+                    width: 96%
+                    border-radius: 50%
+                    z-index: 3    
+
+        svg
+            display: none
         
 @keyframes rodar
     0%
@@ -129,10 +139,10 @@ section
 
 .cursos
     display: flex
-    justify-content: space-around
+    justify-content: space-evenly
     flex-wrap: wrap
     flex-direction: row
-    padding: 2em 0 0 2em
+    padding: 1em 0 0 1em
     align-content: flex-start
     transition: .5s
 
@@ -230,3 +240,44 @@ section
                         display: block
 
 
+
+@media screen and (max-width: $screen-medio) 
+    section
+        padding: 0
+    .principal
+        display: flex
+        flex-direction: column-reverse
+
+        .descricao
+            margin-top: 1em
+
+            h1
+                padding: 0 1em .5em 1em
+                margin: 0
+            p
+                padding: 1em
+            
+
+        .ondas
+            .imagem
+                background-color: $azul
+                display: flex
+                justify-content: space-around
+                align-content: center
+                align-items: center
+                padding: 1em 2em 0 2em
+                border-radius: 0
+                .borda-img
+                    z-index: 2
+                    img
+                        position: absolute
+            svg
+                display: block
+                width: 100%
+                transform: translateY(-1px)
+                path
+                    
+                    z-index: 1
+
+
+    
