@@ -79,7 +79,8 @@ section {
   background-color: #0045da;
   display: flex;
   height: 100%;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-content: center;
   align-items: center;
   padding: 0 2em;
@@ -95,6 +96,7 @@ section {
   justify-content: center;
   border-radius: 50%;
   overflow: hidden;
+  margin-top: 5em;
 }
 .principal .ondas .imagem .borda-img::before {
   content: "";
@@ -120,6 +122,19 @@ section {
   width: 96%;
   border-radius: 50%;
   z-index: 3;
+}
+.principal .ondas .imagem .redes-sociais {
+  margin-top: 0.5em;
+  font-size: 3em;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.principal .ondas .imagem .redes-sociais a {
+  text-decoration: none;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 .principal .ondas svg {
   display: none;
@@ -265,6 +280,7 @@ section {
   }
   .principal .ondas .imagem .borda-img {
     z-index: 2;
+    margin-top: 0;
   }
   .principal .ondas .imagem .borda-img img {
     position: absolute;
