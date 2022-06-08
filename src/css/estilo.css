@@ -260,6 +260,8 @@ section {
 @media screen and (max-width: 900px) {
   section {
     padding: 0;
+    min-height: 0;
+    height: auto;
   }
 
   .principal {
@@ -301,19 +303,26 @@ section {
     z-index: 1;
   }
 
+  .cursos .card .face1 {
+    transform: translateY(0vh);
+    margin-top: 1em;
+    background: #ff548f;
+  }
   .cursos .card .texto_card {
-    animation: deslizar_celular 2s linear infinite;
+    transform: translateY(0vh);
+    border: 1px solid #000;
   }
-}
-@keyframes deslizar_celular {
-  0% {
-    transform: translateY(-15vh);
+  .cursos .card .texto_card .conteudo {
+    display: block;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  50% {
-    transform: translateY(-12vh);
+  .cursos .card .texto_card .conteudo p {
+    display: block;
   }
-  100% {
-    transform: translateY(-15vh);
+  .cursos .card .texto_card .conteudo a {
+    position: absolute;
+    bottom: 0;
   }
 }
 

@@ -268,6 +268,8 @@ section
 @media screen and (max-width: $screen-medio) 
     section
         padding: 0
+        min-height: 0
+        height: auto
     .principal
         display: flex
         flex-direction: column-reverse
@@ -306,13 +308,22 @@ section
 
     .cursos
         .card
-            .texto_card
-                animation: deslizar_celular 2s linear infinite
+            .face1
+                transform: translateY(0vh)
+                margin-top: 1em
+                background: $rosa
 
-@keyframes deslizar_celular  
-    0%
-        transform: translateY(-15vh)
-    50%
-        transform: translateY(-12vh)
-    100%
-        transform: translateY(-15vh)
+            .texto_card
+                transform: translateY(0vh)
+                border: 1px solid #000
+
+                .conteudo
+                    display: block
+                    flex-direction: column
+                    justify-content: space-between 
+                    p
+                        display: block
+
+                    a
+                        position: absolute
+                        bottom: 0
