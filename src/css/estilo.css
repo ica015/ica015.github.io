@@ -313,16 +313,17 @@ section {
     border: 1px solid #000;
   }
   .cursos .card .texto_card .conteudo {
-    display: block;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: auto;
   }
   .cursos .card .texto_card .conteudo p {
     display: block;
   }
   .cursos .card .texto_card .conteudo a {
-    position: absolute;
-    bottom: 0;
+    width: fit-content;
+    margin-bottom: 0;
   }
 }
 
