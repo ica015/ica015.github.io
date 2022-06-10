@@ -8,18 +8,23 @@
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto+Mono:wght@100&display=swap');
         </style>
     <link rel="stylesheet" href="./src/css/estilo.css">
+    <script src="./src/js/js.js"></script>
     <title>Bem-vindo a minha página pessoal</title>
 </head>
 <body>
-    <nav class="menu">
+    <nav class="menu" id="menu">
         <ul>
-            <li ><a href="#" class="ativo" data-text="Formação">Formação</a></li>
+            <li><a href="#" class="ativo" data-text="Formação">Formação</a></li>
             <li><a href="#" data-text="Cursos">Cursos</a></li>
             <li><a href="#" data-text="Portfólio">Portfólio</a></li>
             <li><a href="#" data-text="Contato">Contato</a></li>
         </ul>
+        <div class="ativa_menu" id="ativa_menu" onclick="abre_menu()">
+            <span></span>
+        </div>
+        
     </nav>
-    <section class="principal">
+    <section class="principal" onclick="fecha_menu()">
         <div class="descricao">
             <h1>Carlos Henrique de Carvalho Amorim</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus reiciendis sunt, voluptate ipsum animi eius explicabo reprehenderit asperiores, sequi itaque, nemo minus ipsa id quas veritatis consequatur debitis odit quia.</p>

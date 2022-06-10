@@ -1,11 +1,5 @@
-$rosa: #ff548f
-$roxo: #9061c2
-$roxo-claro: #be80ff
-$azul-claro: #63d3ff
-$azul: #0045da
-$cinza-claro: #fefefe
-$cinza-escuro: #333
-$screen-medio: 900px
+@import './_partials/_variables.sass'
+@import './_partials/_header.sass'
     
 *
     margin: 0
@@ -18,44 +12,9 @@ body
     display: flex
     flex-direction: column
 
-.menu
-    display: flex
-    justify-content: flex-start
-    width: 100%
-    padding-top: .5em
-
-    ul
-        display: flex
-        
-
-    li
-        list-style: none
-        
-        a
-            text-decoration: none
-            padding: 0 .5em
-            font-family: 'Times new Roman'
-            position: relative
-            font-size: 1.5em
-            font-weight: 600
-            color: #000
-
-            &.ativo
-                color:$azul
-            
-
-            &::before
-                content: attr(data-text)
-                position: absolute
-                color: $azul
-                width: 0
-                overflow: hidden
-                transition: 1s
-
-            &:hover
-                cursor: pointer
-                &::before
-                    width: 100%
+.opaco
+    opacity: .6
+    
 section
     width: 100%
     min-height: 100vh
