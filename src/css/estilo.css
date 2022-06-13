@@ -75,12 +75,14 @@
   }
   .ativa_menu span {
     display: block;
-    width: 20px;
+    width: 25px;
     height: 3px;
     background-color: #fff;
-    border-radius: 3pxd;
+    border-radius: 3px;
     z-index: 5;
     position: absolute;
+    transition: 1.5s;
+    top: 3px;
   }
   .ativa_menu span::after, .ativa_menu span::before {
     content: "";
@@ -91,10 +93,10 @@
     border-radius: 3px;
   }
   .ativa_menu span::after {
-    top: -8px;
+    top: 9px;
   }
   .ativa_menu span::before {
-    top: 8px;
+    top: 18px;
   }
 }
 * {
