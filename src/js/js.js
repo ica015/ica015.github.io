@@ -5,9 +5,11 @@ function abre_menu(){
 }
 
 function fecha_menu(){
-    document.getElementById("menu").style.transform = "translateX(-300px)";
-    document.getElementById("ativa_menu").style.display = "block";
-    document.querySelector("section").classList.remove('opaco')
+    if (window.screen.width <= 900){
+        document.getElementById("menu").style.transform = "translateX(-300px)";
+        document.getElementById("ativa_menu").style.display = "block";
+        document.querySelector("section").classList.remove('opaco')
+    } 
 }
 
 window.onscroll = () =>{
