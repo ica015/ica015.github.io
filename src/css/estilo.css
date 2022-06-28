@@ -125,7 +125,6 @@ body {
 section {
   width: 100%;
   min-height: 100vh;
-  padding: 0.5em 0 0.5em 2em;
 }
 
 .principal {
@@ -141,7 +140,7 @@ section {
   margin-bottom: 1em;
   font-family: "Merriweather Sans", sans-serif;
   font-size: 3em;
-  text-shadow: 0 0 1px #63d3ff;
+  color: #0045da;
 }
 .principal .descricao p {
   font-size: 1.2em;
@@ -149,7 +148,7 @@ section {
   padding: 0 1.2em;
   line-height: 1.7em;
 }
-.principal .descricao p b {
+.principal .descricao p strong {
   color: #0045da;
   font-size: 1.3em;
 }
@@ -235,7 +234,108 @@ section {
     transform: rotate(360deg);
   }
 }
-.cursos {
+.curriculo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+.curriculo h2 {
+  font-size: 2.5em;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #9061c2;
+  padding: 0.5em 0;
+}
+.curriculo .historico {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 1000px;
+  position: relative;
+  margin-top: 7em;
+}
+.curriculo .historico .data {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  position: relative;
+  background-color: #888;
+  transition: 0.5s;
+  z-index: 3;
+}
+.curriculo .historico .data:hover {
+  cursor: pointer;
+}
+.curriculo .historico .data::before, .curriculo .historico .data::after {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 5px;
+  background: #888;
+}
+.curriculo .historico .data::before {
+  right: 0;
+}
+.curriculo .historico .data::after {
+  left: 0;
+}
+.curriculo .historico .data.ativo {
+  background: #333;
+}
+.curriculo .historico .data.ativo::before {
+  background: #333;
+}
+.curriculo .historico .data.ativo::after {
+  background: #888;
+}
+.curriculo .historico .data.ativo span {
+  font-weight: 700;
+}
+.curriculo .historico .data.ativo span::before {
+  font-size: 1em;
+}
+.curriculo .historico .data.ativo span::after {
+  font-size: 1.2em;
+}
+.curriculo .historico .data.ativo ~ .data, .curriculo .historico .data.ativo ~ .data::before, .curriculo .historico .data.ativo ~ .data::after {
+  background-color: #fefefe;
+}
+.curriculo .historico .data span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+}
+.curriculo .historico .data span::before, .curriculo .historico .data span::after {
+  visibility: visible;
+  position: absolute;
+  left: 50%;
+}
+.curriculo .historico .data span::after {
+  content: attr(data-year);
+  top: 1.3em;
+  transform: translateX(-50%);
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.curriculo .historico .data span::before {
+  content: attr(data-info);
+  top: -6em;
+  width: 7em;
+  transform: translateX(-0.8em) rotateZ(-45deg);
+  font-size: 1.1em;
+  text-indent: -1em;
+}
+
+.portfolio {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -244,16 +344,24 @@ section {
   align-content: flex-start;
   transition: 0.5s;
 }
-.cursos .card {
+.portfolio h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 2.5em;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #0045da;
+  padding: 0.5em 0;
+}
+.portfolio .card {
   position: relative;
 }
-.cursos .card .face {
+.portfolio .card .face {
   width: 20em;
   display: block;
   padding: 1.2em 0;
   min-height: 30vh;
 }
-.cursos .card .face1 {
+.portfolio .card .face1 {
   position: relative;
   background: #fefefe;
   border: 1px solid #333;
@@ -264,14 +372,14 @@ section {
   transform: translateY(15vh);
   transition: 1s;
 }
-.cursos .card .face1 .conteudo {
+.portfolio .card .face1 .conteudo {
   opacity: 0.6;
   transition: 0.5s;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.cursos .card .face1 .conteudo h3 {
+.portfolio .card .face1 .conteudo h3 {
   width: 100%;
   color: #333;
   font-size: 1.5em;
@@ -280,10 +388,10 @@ section {
   padding-top: 0.5em;
   transition: 1s;
 }
-.cursos .card .face1 .conteudo ion-icon {
+.portfolio .card .face1 .conteudo ion-icon {
   font-size: 4em;
 }
-.cursos .card .texto_card {
+.portfolio .card .texto_card {
   position: relative;
   background: #fefefe;
   display: flex;
@@ -296,11 +404,11 @@ section {
   transform: translateY(-15vh);
   transition: 1s;
 }
-.cursos .card .texto_card .conteudo p {
+.portfolio .card .texto_card .conteudo p {
   width: 100%;
   display: none;
 }
-.cursos .card .texto_card a {
+.portfolio .card .texto_card a {
   margin: 1em 0;
   display: inline-block;
   text-decoration: none;
@@ -310,33 +418,33 @@ section {
   padding: 0.8em;
   border: 1px solid #333;
 }
-.cursos .card .texto_card a:hover {
+.portfolio .card .texto_card a:hover {
   color: #fefefe;
   background: #333;
   box-shadow: 0 0 5px #ff548f, 0 0 10px #ff548f, 0 0 15px #ff548f;
 }
-.cursos .card img {
+.portfolio .card img {
   max-width: 30%;
 }
-.cursos .card:hover .face1 {
+.portfolio .card:hover .face1 {
   background: #ff548f;
   transform: translateY(0);
 }
-.cursos .card:hover .face1 .conteudo {
+.portfolio .card:hover .face1 .conteudo {
   opacity: 1;
 }
-.cursos .card:hover .face1 .conteudo h3 {
+.portfolio .card:hover .face1 .conteudo h3 {
   letter-spacing: 3px;
 }
-.cursos .card:hover .texto_card {
+.portfolio .card:hover .texto_card {
   transform: translateY(0);
   display: block;
   animation-iteration-count: 1;
 }
-.cursos .card:hover .texto_card .conteudo {
+.portfolio .card:hover .texto_card .conteudo {
   width: 100%;
 }
-.cursos .card:hover .texto_card .conteudo p {
+.portfolio .card:hover .texto_card .conteudo p {
   width: 100%;
   display: block;
 }
@@ -387,25 +495,64 @@ section {
     z-index: 1;
   }
 
-  .cursos .card .face1 {
+  .curriculo {
+    justify-content: initial;
+  }
+  .curriculo h2 {
+    text-align: center;
+    margin-top: 1em;
+  }
+  .curriculo .historico {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 15vh;
+  }
+  .curriculo .historico .data {
+    width: 4em;
+    height: 4em;
+    margin: 0 1.5em 6em;
+    background: #888;
+  }
+  .curriculo .historico .data::after, .curriculo .historico .data::before {
+    content: none;
+  }
+  .curriculo .historico .data span {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .curriculo .historico .data span::before {
+    top: calc(100% + 5px);
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .curriculo .historico .data span::after {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fefefe;
+  }
+
+  .portfolio .card .face1 {
     transform: translateY(0vh);
     margin-top: 1em;
     background: #ff548f;
   }
-  .cursos .card .texto_card {
+  .portfolio .card .texto_card {
     transform: translateY(0vh);
     border: 1px solid #000;
   }
-  .cursos .card .texto_card .conteudo {
+  .portfolio .card .texto_card .conteudo {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: auto;
   }
-  .cursos .card .texto_card .conteudo p {
+  .portfolio .card .texto_card .conteudo p {
     display: block;
   }
-  .cursos .card .texto_card .conteudo a {
+  .portfolio .card .texto_card .conteudo a {
     width: fit-content;
     margin-bottom: 0;
   }
