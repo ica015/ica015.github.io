@@ -1,0 +1,157 @@
+@import '_variables.sass'
+
+.opaco
+    opacity: .6
+    
+section
+    width: 100%
+    min-height: 100vh
+    //padding: 0 0 0 2em
+
+.principal
+    position: relative
+    display: grid
+    grid-template-columns: 1fr 1fr
+    justify-content: space-between
+    min-height: calc( 100vh - $height-menu )
+    
+    .descricao
+        h1
+            text-align: center
+            padding-top: 1em
+            margin-bottom: 1em
+            font-family: 'Merriweather Sans', sans-serif
+            font-size: 3em
+            color: $azul
+
+        p
+            font-size: 1.2em
+            text-align: justify
+            padding: 0 1.2em
+            line-height: 1.7em
+            
+            strong
+                color: $azul
+                font-size: 1.3em
+            
+
+    .ondas
+        display: flex
+        flex-direction: column
+        align-content: stretch
+        justify-content: flex-start
+
+        .imagem
+            background-color: $azul
+            display: flex
+            height: 100%
+            flex-direction: column
+            justify-content: center
+            align-content: center
+            align-items: center
+            padding:0 2em
+            border-radius: 100% 0% 69% 31% / 61% 100% 0% 39%
+                
+            .borda-img
+                position: relative
+                height: 18em
+                width: 18em
+                background: $azul
+                display: flex
+                align-items: center
+                justify-content: center
+                border-radius: 50%
+                overflow: hidden
+                margin-top: 5em
+                
+                &::before
+                    content: ''
+                    position: absolute
+                    inset: -2em 6em
+                    background: linear-gradient(100deg, $rosa, $roxo-claro)
+                    animation: rodar 4s linear infinite
+                    transition: .5s    
+
+                &:hover
+                    &::before
+                        inset: -1em
+                
+                &::after
+                    content: ''
+                    position: absolute
+                    inset: .5em
+                    border-radius: 50%
+                    background: $azul
+                    z-index: 1
+
+                img
+                    position: absolute
+                    width: 96%
+                    border-radius: 50%
+                    z-index: 3  
+            .redes-sociais
+                margin: .5em 0 .3em 0
+                font-size: 3em
+                width: 80%
+                display: flex
+                justify-content: space-evenly
+                
+                
+                a
+                    text-decoration: none
+                    color: #fff
+                    margin: 0
+                    padding: 0
+                
+                    ion-icon
+                        &:hover
+                            transform: scale(1.5)
+        svg
+            display: none
+        
+@keyframes rodar
+    0%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(360deg)
+
+@media screen and (max-width: $screen-medio) 
+    section
+        padding: 0
+        min-height: 0
+        height: auto
+    .principal
+        display: flex
+        flex-direction: column-reverse
+
+        .descricao
+            margin-top: 1em
+
+            h1
+                padding: 0 1em .5em 1em
+                margin: 0
+            p
+                padding: 1em
+            
+
+        .ondas
+            .imagem
+                background-color: $azul
+                display: flex
+                justify-content: space-around
+                align-content: center
+                align-items: center
+                padding: 1em 2em 0 2em
+                border-radius: 0
+                .borda-img
+                    z-index: 2
+                    margin-top: 0
+                    img
+                        position: absolute
+            svg
+                display: block
+                width: 100%
+                transform: translateY(-1px)
+                path
+                    
+                    z-index: 1

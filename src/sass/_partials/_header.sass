@@ -7,6 +7,8 @@
     height: $height-menu
     transform: translatex(0px)
     
+    .fechar-menu
+        visibility: hidden
     ul
         display: flex
         
@@ -39,6 +41,7 @@
                 cursor: pointer
                 &::before
                     width: 100%
+            
 
 @media screen and (max-width: $screen-medio) 
     .menu
@@ -55,9 +58,20 @@
         transform: translatex(-300px)
         transition: 1s
 
+        .fechar-menu
+            display: block
+            width: 280px
+            text-align: right
+            visibility: visible
+            padding-right: 1em
+            font-size: 1.5em
+            font-weight: 700
+            color: $cinza-medio
+            z-index: 100
         ul
             display: block
             width: 100%
+            z-index: 11
 
             li
                 width: 100% 

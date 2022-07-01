@@ -1,3 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #0045da;
+  color: #fefefe;
+}
+
+body {
+  background: #fefefe;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .menu {
   display: flex;
   justify-content: flex-start;
@@ -5,6 +26,9 @@
   padding-top: 0.5em;
   height: 2.5em;
   transform: translatex(0px);
+}
+.menu .fechar-menu {
+  visibility: hidden;
 }
 .menu ul {
   display: flex;
@@ -54,9 +78,21 @@
     transform: translatex(-300px);
     transition: 1s;
   }
+  .menu .fechar-menu {
+    display: block;
+    width: 280px;
+    text-align: right;
+    visibility: visible;
+    padding-right: 1em;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #888;
+    z-index: 100;
+  }
   .menu ul {
     display: block;
     width: 100%;
+    z-index: 11;
   }
   .menu ul li {
     width: 100%;
@@ -101,23 +137,6 @@
     top: 18px;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-::selection {
-  background: #0045da;
-  color: #fefefe;
-}
-
-body {
-  background: #fefefe;
-  display: flex;
-  flex-direction: column;
-}
-
 .opaco {
   opacity: 0.6;
 }
@@ -234,6 +253,52 @@ section {
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 900px) {
+  section {
+    padding: 0;
+    min-height: 0;
+    height: auto;
+  }
+
+  .principal {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .principal .descricao {
+    margin-top: 1em;
+  }
+  .principal .descricao h1 {
+    padding: 0 1em 0.5em 1em;
+    margin: 0;
+  }
+  .principal .descricao p {
+    padding: 1em;
+  }
+  .principal .ondas .imagem {
+    background-color: #0045da;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    padding: 1em 2em 0 2em;
+    border-radius: 0;
+  }
+  .principal .ondas .imagem .borda-img {
+    z-index: 2;
+    margin-top: 0;
+  }
+  .principal .ondas .imagem .borda-img img {
+    position: absolute;
+  }
+  .principal .ondas svg {
+    display: block;
+    width: 100%;
+    transform: translateY(-1px);
+  }
+  .principal .ondas svg path {
+    z-index: 1;
+  }
+}
 .curriculo {
   display: flex;
   justify-content: space-evenly;
@@ -335,6 +400,46 @@ section {
   text-indent: -1em;
 }
 
+@media screen and (max-width: 900px) {
+  .curriculo {
+    justify-content: initial;
+  }
+  .curriculo h2 {
+    text-align: center;
+    margin-top: 1em;
+  }
+  .curriculo .historico {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 15vh;
+  }
+  .curriculo .historico .data {
+    width: 4em;
+    height: 4em;
+    margin: 0 1.5em 6em;
+    background: #888;
+  }
+  .curriculo .historico .data::after, .curriculo .historico .data::before {
+    content: none;
+  }
+  .curriculo .historico .data span {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .curriculo .historico .data span::before {
+    top: calc(100% + 5px);
+    transform: translateX(-50%);
+    text-align: center;
+  }
+  .curriculo .historico .data span::after {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fefefe;
+  }
+}
 .portfolio {
   display: flex;
   justify-content: space-evenly;
@@ -404,9 +509,11 @@ section {
   transform: translateY(-15vh);
   transition: 1s;
 }
+.portfolio .card .texto_card .conteudo {
+  display: none;
+}
 .portfolio .card .texto_card .conteudo p {
   width: 100%;
-  display: none;
 }
 .portfolio .card .texto_card a {
   margin: 1em 0;
@@ -424,7 +531,8 @@ section {
   box-shadow: 0 0 5px #ff548f, 0 0 10px #ff548f, 0 0 15px #ff548f;
 }
 .portfolio .card img {
-  max-width: 30%;
+  max-width: 100%;
+  padding: 0.5em 1em;
 }
 .portfolio .card:hover .face1 {
   background: #ff548f;
@@ -443,101 +551,30 @@ section {
 }
 .portfolio .card:hover .texto_card .conteudo {
   width: 100%;
+  display: block;
 }
 .portfolio .card:hover .texto_card .conteudo p {
   width: 100%;
-  display: block;
+  font-size: 1.1em;
+  line-height: 1.3em;
+}
+.portfolio .card:hover .texto_card .conteudo ul {
+  padding-left: 1em;
+  margin-top: 0.5em;
+}
+.portfolio .card:hover .texto_card .conteudo ul li {
+  width: 100%;
+  font-size: 1.1em;
 }
 
 @media screen and (max-width: 900px) {
-  section {
-    padding: 0;
-    min-height: 0;
-    height: auto;
-  }
-
-  .principal {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .principal .descricao {
-    margin-top: 1em;
-  }
-  .principal .descricao h1 {
-    padding: 0 1em 0.5em 1em;
-    margin: 0;
-  }
-  .principal .descricao p {
-    padding: 1em;
-  }
-  .principal .ondas .imagem {
-    background-color: #0045da;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    padding: 1em 2em 0 2em;
-    border-radius: 0;
-  }
-  .principal .ondas .imagem .borda-img {
-    z-index: 2;
-    margin-top: 0;
-  }
-  .principal .ondas .imagem .borda-img img {
-    position: absolute;
-  }
-  .principal .ondas svg {
-    display: block;
-    width: 100%;
-    transform: translateY(-1px);
-  }
-  .principal .ondas svg path {
-    z-index: 1;
-  }
-
-  .curriculo {
-    justify-content: initial;
-  }
-  .curriculo h2 {
-    text-align: center;
-    margin-top: 1em;
-  }
-  .curriculo .historico {
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin-top: 15vh;
-  }
-  .curriculo .historico .data {
-    width: 4em;
-    height: 4em;
-    margin: 0 1.5em 6em;
-    background: #888;
-  }
-  .curriculo .historico .data::after, .curriculo .historico .data::before {
-    content: none;
-  }
-  .curriculo .historico .data span {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  .curriculo .historico .data span::before {
-    top: calc(100% + 5px);
-    transform: translateX(-50%);
-    text-align: center;
-  }
-  .curriculo .historico .data span::after {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #fefefe;
-  }
-
   .portfolio .card .face1 {
     transform: translateY(0vh);
     margin-top: 1em;
     background: #ff548f;
+  }
+  .portfolio .card .face1 .conteudo {
+    opacity: 1;
   }
   .portfolio .card .texto_card {
     transform: translateY(0vh);
@@ -550,7 +587,17 @@ section {
     min-height: auto;
   }
   .portfolio .card .texto_card .conteudo p {
-    display: block;
+    width: 100%;
+    font-size: 1.1em;
+    line-height: 1.3em;
+  }
+  .portfolio .card .texto_card .conteudo ul {
+    padding-left: 1em;
+    margin-top: 0.5em;
+  }
+  .portfolio .card .texto_card .conteudo ul li {
+    width: 100%;
+    font-size: 1.1em;
   }
   .portfolio .card .texto_card .conteudo a {
     width: fit-content;

@@ -1,0 +1,163 @@
+@import './_variables.sass'
+
+.portfolio
+    display: flex
+    justify-content: space-evenly
+    flex-wrap: wrap
+    flex-direction: row
+    padding: 1em 0 0 1em
+    align-content: flex-start
+    transition: .5s
+
+    h2
+        text-align: center
+        width: 100%
+        font-size: 2.5em
+        font-family: 'Merriweather Sans', sans-serif
+        color: $azul
+        padding: .5em 0
+
+
+    .card
+        position: relative
+
+        .face
+            width: 20em
+            display: block
+            padding: 1.2em 0
+            min-height: 30vh
+
+    
+        .face1
+            position: relative
+            background: $cinza-claro
+            border: 1px solid $cinza-escuro
+            display: flex
+            justify-content: center
+            align-items: center
+            z-index: 1
+            transform: translateY(15vh)
+            transition: 1s
+
+            .conteudo
+                opacity: .6
+                transition: .5s
+                display: flex
+                flex-direction: column
+                align-items: center
+        
+                h3
+                    width: 100%
+                    color: $cinza-escuro
+                    font-size: 1.5em
+                    font-weight: 600
+                    text-align: center
+                    padding-top: .5em
+                    transition: 1s
+                
+                ion-icon
+                    font-size: 4em
+
+        .texto_card
+            position: relative
+            background: $cinza-claro
+            display: flex
+            justify-content: flex-start
+            align-items: center
+            flex-direction: column
+            padding: 1.5em
+            box-sizing: border-box
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .8)
+            transform: translateY(-15vh)
+            transition: 1s
+            //top: 2em
+            
+
+            .conteudo
+                display: none
+                p
+                    width: 100%
+                    
+
+            a
+                margin: 1em 0
+                display: inline-block
+                text-decoration: none
+                font-weight: 900
+                color: $cinza-escuro
+                font-family: "times new roman"
+                padding: .8em
+                border: 1px solid $cinza-escuro
+                &:hover
+                    color:$cinza-claro
+                    background: $cinza-escuro  
+                    box-shadow: 0 0 5px $rosa, 0 0 10px $rosa, 0 0 15px $rosa  
+        img
+            max-width: 100%
+            padding: .5em 1em
+
+        &:hover
+            .face1
+                background: $rosa
+                transform: translateY(0)
+
+                .conteudo
+                    opacity: 1
+
+                    h3
+                        letter-spacing: 3px
+            .texto_card
+                transform: translateY(0)
+                display: block
+                animation-iteration-count: 1
+                //top: -1em
+                
+                .conteudo
+                    width: 100%
+                    display: block
+                    p
+                        width: 100%
+                        font-size: 1.1em
+                        line-height: 1.3em
+                        
+                    ul
+                        padding-left: 1em
+                        margin-top: .5em
+                        li
+                            width: 100%
+                            font-size: 1.1em
+                            
+
+@media screen and (max-width: $screen-medio) 
+    .portfolio
+        .card
+            .face1
+                transform: translateY(0vh)
+                margin-top: 1em
+                background: $rosa
+                .conteudo
+                    opacity: 1
+
+            .texto_card
+                transform: translateY(0vh)
+                border: 1px solid #000
+
+                .conteudo
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-between 
+                    min-height: auto
+                    p
+                        width: 100%
+                        font-size: 1.1em
+                        line-height: 1.3em
+                        
+                    ul
+                        padding-left: 1em
+                        margin-top: .5em
+                        li
+                            width: 100%
+                            font-size: 1.1em
+                    a
+                        width: fit-content
+                        margin-bottom: 0

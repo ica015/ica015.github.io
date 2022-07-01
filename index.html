@@ -13,18 +13,19 @@
 </head>
 <body>
     <nav class="menu" id="menu">
+        <span class="fechar-menu" id='fechar-menu'>X</span>
         <ul>
-            <li><a href="#" class="ativo" data-text="Formação">Formação</a></li>
-            <li><a href="#" data-text="Cursos">Cursos</a></li>
-            <li><a href="#" data-text="Portfólio">Portfólio</a></li>
-            <li><a href="#" data-text="Contato">Contato</a></li>
+            <li><a href="#apresentacao" class="ativo" data-text="Apresentação">Apresentação</a></li>
+            <li><a href="#historico" data-text="Histórico">Histórico</a></li>
+            <li><a href="#portfolio" data-text="Portfólio">Portfólio</a></li>
+            <li><a href="#contato" data-text="Contato">Contato</a></li>
         </ul>
-        <div class="ativa_menu" id="ativa_menu" onclick="abre_menu()">
+        <div class="ativa_menu" id="ativa_menu">
             <span></span>
         </div>
         
     </nav>
-    <section class="principal" id="principal" onclick="fecha_menu()">
+    <section class="principal" id="apresentacao">
         <div class="descricao">
             <h1>Carlos Henrique de Carvalho Amorim</h1>
             <p>Formado em engenharia elétrica, atuei por 10 anos no setor de geração de energia de emergência. 
@@ -51,7 +52,7 @@
             </svg>
         </div>
     </section>
-    <section class="curriculo">
+    <section class="curriculo" id="historico">
         <h2>Um pouco da minha caminhada</h2>
         <div class="historico">
             <div class="data">
@@ -86,30 +87,37 @@
             </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <h2>Portfólio</h2>
         <div class="card">
             <div class="face face1">
                 <div class="conteudo">
-                    <img src="./src/img/engenharia.png" alt="">
-                    <h3>Engenharia</h3>
+                    <img src="https://dracarolinaamorim.com.br/assets/imagens/logo_carol_fundo_branco.jpg" alt="Dra Carolina Amorim">
+                    <h3>Dra Carolina Amorim</h3>
                 </div>
                 
             </div>
             <div class="face texto_card">
                 <div class="conteudo">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Enim, mollitia dicta doloribus dolorum perferendis saepe illum sapiente itaque quaerat
-                         earum id animi, commodi cum nulla, asperiores molestias! 
-                         Doloremque, fuga vitae.</p>
-                    <a href="">Saiba Mais</a>
+                    <p>Site para clinica médica que contempla uma calculadora de idade gestacional, IMC e um blog para publicação de conteúdo.
+                        <br>Para este site foram utiilzados os seguintes recursos:
+                    </p>
+                    <ul>
+                        <li>PHP</li>
+                        <li>CodeIgnite</li>
+                        <li>Bootstrap</li>
+                        <li>JQuery</li>
+                        <li>Estrutura MVC</li>
+                        <li>Responsiviade</li>
+                    </ul>
+                    <a href="https://dracarolinaamorim.com.br/" target="_blank">Acesse o site</a>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="face face1">
                 <div class="conteudo">
-                    <img src="./src/img/mercado.png" alt="">
+                    <img style='max-width:40%' src="./src/img/mercado.png" alt="">
                     <h3>Mercado de Capitais</h3>
                 </div>
             </div>
@@ -150,7 +158,29 @@
             </div>
         </div>
     </section>
-    
+<!--    <section class="contato" id="contato">
+        <h2>Entre em contato</h2>
+        <form action="">
+            <div class="dados-contato">
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" required placeholder="Seu nome ou como gostaria de ser chamado">
+                <label for="email">Email: </label>
+                <input type="email" id="email" required placeholder="e-mail para retorno de contato">
+                <label for="telefone">Telefone com DDD: </label>
+                <input type="tel" id="telefone" placeholder="De preferência que tenha WhatsApp">
+            </div>
+            <div class="mensagem">
+                <label for="mensagem">Mensagem: </label>
+                <textarea name="mensagem" id="mensagem" cols="30" rows="10"></textarea>
+            </div>
+            <div class="botoes">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+            
+        </form>
+    </section>
+-->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
