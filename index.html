@@ -10,15 +10,17 @@
     <link rel="stylesheet" href="./src/css/estilo.css">
     <script src="./src/js/js.js"></script>
     <title>Bem-vindo a minha página pessoal</title>
+    <script src="https://unpkg.com/typebot-js@2.2"></script>
+
 </head>
 <body>
     <nav class="menu" id="menu">
         <span class="fechar-menu" id='fechar-menu'>X</span>
         <ul>
-            <li><a href="#apresentacao" class="ativo" data-text="Apresentação">Apresentação</a></li>
+            <li><a href="#apresentacao" data-text="Apresentação">Apresentação</a></li>
             <li><a href="#historico" data-text="Histórico">Histórico</a></li>
             <li><a href="#portfolio" data-text="Portfólio">Portfólio</a></li>
-            <li><a href="#contato" data-text="Contato">Contato</a></li>
+            <!-- <li><a href="#contato" data-text="Contato">Contato</a></li> -->
         </ul>
         <div class="ativa_menu" id="ativa_menu">
             <span></span>
@@ -35,7 +37,7 @@
                 Sempre disposto a conhecer coisas novas e enfrentar novos desafios, posso te ajudar a viabilizar seus projetos, 
                 automatizar seus processos e criar soluçoes que te elevarão sua produtividade à novos patamares.</p>
         </div>
-        <div class="ondas">
+        <div class="ondas" data-aos="fade-left">
             <div class="imagem">
                 <div class="borda-img">
                     <img src="./src/img/Carlos_Henrique1.jpg" alt="Carlos Henrique">
@@ -52,7 +54,7 @@
             </svg>
         </div>
     </section>
-    <section class="curriculo" id="historico">
+    <section class="curriculo" id="historico" data-aos="fade-left" data-aos-duration='1000'>
         <h2>Um pouco da minha caminhada</h2>
         <div class="historico">
             <div class="data">
